@@ -15,4 +15,8 @@ module.exports = function(server){
 	const billingCycleService = require('../api/billingCycle/billingCycleServices');
 	billingCycleService.register(router, '/billingCycles');
 
+	//billingSummary
+	const billingSummaryService = require('../api/billingSummary/billingSummaryService');
+	//mapping the route
+	router.route('/billingSummary').get(billingSummaryService.getSummary);
 }
